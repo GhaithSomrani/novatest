@@ -1,0 +1,16 @@
+anchor_version = "0.17.0"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[programs.mainnet]
+serum_swap = "FLagMLTR1wSDaZrhZKe1NKnt8V1XYte3NYoDgp7xBLd6"
+serum_dex = { address = "7RA6GmbCYRBB66QfuDa1peHAE2fWDbeR7Vr2sGmNtGFC", path = "./deps/serum-dex/dex/target/deploy/serum_dex.so" }
+
+[[test.genesis]]
+address = "7RA6GmbCYRBB66QfuDa1peHAE2fWDbeR7Vr2sGmNtGFC"
+program = "./deps/serum-dex/dex/target/deploy/serum_dex.so"
+
+[scripts]
+test = "mocha -t 1000000 tests/test.js"
